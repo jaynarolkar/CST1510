@@ -2,14 +2,12 @@
 RECORD CHECK  -  my version
 ===========================
 
-Name  :
-Lane  :  AI / Cyber / IT      (delete two)
-Date  :
+Name  :jay narolkar
+Lane  :  AI
+Date  :04/10/2026
 
 Run it:   python template.py
 
-Work through the numbered sections in order. Each one tells you what it must do.
-Delete these instructions as you replace them with your code.
 """
 
 # ==================================================================== INPUT
@@ -22,11 +20,6 @@ second = float(input("enter GB total: "))
 
 # ================================================================== PROCESS
 # 2. Work out what you were NOT given.       [Typical and above]
-#
-#    - difference : how far the first is from the second
-#    - percent    : the first as a percentage of the second
-#
-#    Do not type the answers. Calculate them.
 
 difference = second - first   # 
 percent = (first/second)*100       
