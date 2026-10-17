@@ -2,9 +2,9 @@
 RECORD CHECK  -  my version
 ===========================
 
-Name  :
-Lane  :  AI / Cyber / IT      (delete two)
-Date  :
+Name  :jay niraj narolkar
+Lane  :  AI 
+Date  :10/10/2026
 
 Run it:   python template.py
 
@@ -27,6 +27,32 @@ Delete these instructions as you replace them with your code.
 #    Give each function a one-line docstring saying what it does.
 
 # your function(s) go here
+def status_of(percent):
+    """Returns the status based on the percentage."""
+    if percent >= 100:
+        return "OVER LIMIT"
+    elif percent >= 90:
+        return "WARNING"
+    else:
+        return "OK"
+
+
+def check(value, limit):
+    """Returns the difference and percentage of the limit used."""
+    difference = value - limit
+    percent = (value / limit) * 100
+    return difference, percent
+
+
+def print_report(label, value, limit, difference, percent, status):
+    """Prints a report for a single record."""
+    print("Label:", label)
+    print("Value:", value)
+    print("Limit:", limit)
+    print("Difference:", difference)
+    print("Percentage:", percent)
+    print("Status:", status)
+    print("--------------------")
 
 
 # ==================================================================== INPUT
@@ -36,22 +62,17 @@ Delete these instructions as you replace them with your code.
 #    - the second is a NUMBER (use float(), not int())
 #    - the third  is a NUMBER (use float(), not int())
 
-label = ""      # replace with an input() call
-value = 0.0     # replace with an input() call, converted
-limit = 0.0     # replace with an input() call, converted
+label = input("Enter the label: ")      
+value = float(input("Enter the value: "))     
+limit = float(input("Enter the limit: "))     
 
 
 # ================================================================== PROCESS
 # 3. Work out the difference, the percentage, and the status.
 #
-#    Threshold : call status_of() to get the status. Work out the
-#                difference and percentage inline, not in a function.
-#    Typical   : call check() to get the difference and percentage instead.
-
-difference = 0.0   # replace with your code
-percent = 0.0       # replace with your code
-status = ""          # replace with your code
-
+difference = value - limit
+percent = (value / limit) * 100
+status = status_of(percent)
 
 # =================================================================== OUTPUT
 # 4. Print the report.
@@ -70,7 +91,11 @@ print(f"  RECORD CHECK  -  {label}")
 print("=" * 34)
 
 # your report lines go here
-
+print(f"  Value:      {value:>10.2f}")
+print(f"  Limit:      {limit:>10.2f}")
+print(f"  Difference: {difference:>10.2f}")
+print(f"  Percent:    {percent:>9.2f}%")
+print(f"  Status:     {status:>10}")
 print("=" * 34)
 
 
