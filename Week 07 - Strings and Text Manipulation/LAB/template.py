@@ -8,11 +8,9 @@ Date  : 07/11/2026
 
 Run it:   python template.py
 
-Work through the numbered sections in order. Each one tells you what it must do.
-Delete these instructions as you replace them with your code.
+
 """
 
-# 1. FUNCTIONS
 
 def parse_line(raw_line):
     """Clean one messy server line and return its details in a dictionary."""
@@ -43,7 +41,6 @@ def status_of(record):
         return "OK"
 
 
-# 2. INPUT: read messy records from a text file.
 raw_records = []
 
 with open("messy_lines_week7_for_template2.txt", "r", encoding="utf-8") as file:
@@ -52,7 +49,6 @@ with open("messy_lines_week7_for_template2.txt", "r", encoding="utf-8") as file:
             raw_records.append(line)
 
 
-# 3. PROCESS AND OUTPUT.
 flagged_count = 0
 
 for raw_record in raw_records:
@@ -66,10 +62,3 @@ for raw_record in raw_records:
 print("Total records:", len(raw_records))
 print("Flagged records:", flagged_count)
 
-
-# 4. ERROR TEST.
-# "unknown" cannot be converted to a number, so float() raises ValueError.
-try:
-    parse_line("srv-99,used=unknown,total=100")
-except ValueError as error:
-    print("Example error:", error)
